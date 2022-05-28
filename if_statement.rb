@@ -20,7 +20,7 @@ if word.include?("roo")
   puts "Yup, your word has roo in it!"
 end
 
-if 6.odd?
+if 6 .odd?
   puts "That number is odd!"
 end
 
