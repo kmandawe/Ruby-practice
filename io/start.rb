@@ -1,11 +1,21 @@
 puts "This is the beginning!"
 
-load "end.rb"
+# load "end.rb"
+#
+# puts "Alright, that was successful."
+#
+# load "./end.rb"
+#
+# if 8 > 10
+#   load "end.rb"
+# end
 
-puts "Alright, that was successful."
 
-load "./end.rb"
+# require './end'
 
-if 8 > 10
-  load "end.rb"
-end
+
+require_relative 'end'
+
+require_relative 'a/b/epilogue'
+
+
