@@ -8,4 +8,11 @@ p voicemail.scan(/re/)
 p voicemail.scan(/[re]/)
 p voicemail.scan(/[xgrI]/)
 
+p voicemail.scan(/d/)
+p voicemail.scan(/\d/)
+
+voicemail.scan(/\d+/) { |digit_match| puts digit_match.length }
+
+
+
 
