@@ -5,6 +5,14 @@ class Gadget
     @production_number = "#{('a'..'z').to_a.sample}-#{rand(1..999)}"
   end
 
+  def username
+    @username
+  end
+
+  def production_number
+    @production_number
+  end
+
   def to_s
     "Gadget #{@production_number} has a username #{@username}. It is made from the #{self.class} class and it has the ID #{self.object_id}"
   end
@@ -78,6 +86,9 @@ laptop = Gadget.new
 puts phone.respond_to?(:to_s)
 puts phone.to_s
 
+p phone.username
+p phone.production_number
+p phone.password
 
 
 
