@@ -9,8 +9,16 @@ class Gadget
     @username
   end
 
+  def username=(new_username)
+    @username = new_username
+  end
+
   def production_number
     @production_number
+  end
+
+  def password=(new_password)
+    @password = new_password
   end
 
   def to_s
@@ -83,12 +91,21 @@ laptop = Gadget.new
 
 # puts phone.methods - Object.methods
 
-puts phone.respond_to?(:to_s)
-puts phone.to_s
+# puts phone.respond_to?(:to_s)
+# puts phone.to_s
+#
+# p phone.username
+# p phone.production_number
 
 p phone.username
+phone.username = 'rubyman'
+p phone.username
+# p phone.password
+phone.password = 'bestpasswordever'
+p phone
+
 p phone.production_number
-p phone.password
+# phone.production_number = 'sdf'
 
 
 
