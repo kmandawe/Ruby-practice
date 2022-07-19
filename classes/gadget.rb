@@ -5,7 +5,7 @@ class Gadget
     @production_number = "#{('a'..'z').to_a.sample}-#{rand(1..999)}"
   end
 
-  def info
+  def to_s
     "Gadget #{@production_number} has a username #{@username}"
   end
 end
@@ -68,11 +68,16 @@ laptop = Gadget.new
 # p phone.instance_variables
 # p laptop.instance_variables
 
-puts phone.info
-puts laptop.info
+# puts phone.info
+# puts laptop.info
 
 # puts phone.methods.sort
 
-puts phone.methods - Object.methods
+# puts phone.methods - Object.methods
+
+puts phone.respond_to?(:to_s)
+puts phone.to_s
+
+
 
 
