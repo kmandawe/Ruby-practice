@@ -1,4 +1,9 @@
 class Gadget
+  def initialize
+    @username = "User #{rand(1..100)}"
+    @password = 'topsecret'
+    @production_number = "#{('a'..'z').to_a.sample}-#{rand(1..999)}"
+  end
 end
 
 # # puts Gadget.superclass
@@ -28,26 +33,35 @@ end
 #
 # puts phone.methods.sort
 
-shiny = Gadget.new
-flashy = Gadget.new
+# shiny = Gadget.new
+# flashy = Gadget.new
+#
+# p shiny
+# p flashy
+#
+# p shiny.object_id
+# p flashy.object_id
+#
+# p shiny == flashy
+# p shiny.object_id == flashy.object_id
+#
+# glossy = shiny
+# p glossy.object_id
+# p shiny.object_id
+# p glossy.object_id == shiny.object_id
+# p glossy == shiny
+#
+# p shiny == flashy
+# p glossy == flashy
 
-p shiny
-p flashy
 
-p shiny.object_id
-p flashy.object_id
+phone = Gadget.new
+laptop = Gadget.new
 
-p shiny == flashy
-p shiny.object_id == flashy.object_id
+p phone
+p laptop
 
-glossy = shiny
-p glossy.object_id
-p shiny.object_id
-p glossy.object_id == shiny.object_id
-p glossy == shiny
-
-p shiny == flashy
-p glossy == flashy
-
+p phone.instance_variables
+p laptop.instance_variables
 
 
