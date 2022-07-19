@@ -4,6 +4,10 @@ class Gadget
     @password = 'topsecret'
     @production_number = "#{('a'..'z').to_a.sample}-#{rand(1..999)}"
   end
+
+  def info
+    "Gadget #{@production_number} has a username #{@username}"
+  end
 end
 
 # # puts Gadget.superclass
@@ -57,11 +61,18 @@ end
 
 phone = Gadget.new
 laptop = Gadget.new
+#
+# p phone
+# p laptop
+#
+# p phone.instance_variables
+# p laptop.instance_variables
 
-p phone
-p laptop
+puts phone.info
+puts laptop.info
 
-p phone.instance_variables
-p laptop.instance_variables
+# puts phone.methods.sort
+
+puts phone.methods - Object.methods
 
 
