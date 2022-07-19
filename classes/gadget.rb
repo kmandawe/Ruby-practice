@@ -4,9 +4,9 @@ class Gadget
   attr_reader :production_number
   attr_writer :password
 
-  def initialize
-    @username = "User #{rand(1..100)}"
-    @password = 'topsecret'
+  def initialize(username, password)
+    @username = username
+    @password = password
     @production_number = "#{('a'..'z').to_a.sample}-#{rand(1..999)}"
   end
 
@@ -15,86 +15,19 @@ class Gadget
   end
 end
 
-# # puts Gadget.superclass
-# # puts Gadget.superclass.superclass
-# #
-# # phone = Gadget.new
-# # laptop = Gadget.new
-# # microwave = Gadget.new
-# #
-# # puts phone
-# # puts laptop
-# # puts microwave
-# #
-# # puts phone.class
-# # puts laptop.class
-# # puts microwave.class
-# #
-# # puts phone.is_a?(Gadget)
-# # puts phone.is_a?(Object)
-# # puts phone.is_a?(BasicObject)
-#
-# puts phone.respond_to?(:class)
-# puts phone.respond_to?(:methods)
-# puts phone.respond_to?(:is_a?)
-# puts phone.respond_to?(:respond_to?)
-# puts phone.respond_to?(:length)
-#
-# puts phone.methods.sort
+g1 = Gadget.new('rubyfan102', 'programming123')
+p g1.username
+p g1.production_number
+g1.password = 'blahblahblah'
+g1.username = 'anothergreatname'
+p g1
 
-# shiny = Gadget.new
-# flashy = Gadget.new
-#
-# p shiny
-# p flashy
-#
-# p shiny.object_id
-# p flashy.object_id
-#
-# p shiny == flashy
-# p shiny.object_id == flashy.object_id
-#
-# glossy = shiny
-# p glossy.object_id
-# p shiny.object_id
-# p glossy.object_id == shiny.object_id
-# p glossy == shiny
-#
-# p shiny == flashy
-# p glossy == flashy
+g2 = Gadget.new('misterprogrammer', 'bestpasswordever')
+g2.username = 'Mrs. Programmer'
+p g2.username
 
-
-phone = Gadget.new
-laptop = Gadget.new
-#
-# p phone
-# p laptop
-#
-# p phone.instance_variables
-# p laptop.instance_variables
-
-# puts phone.info
-# puts laptop.info
-
-# puts phone.methods.sort
-
-# puts phone.methods - Object.methods
-
-# puts phone.respond_to?(:to_s)
-# puts phone.to_s
-#
-# p phone.username
-# p phone.production_number
-
-p phone.username
-phone.username = 'rubyman'
-p phone.username
-# p phone.password
-phone.password = 'bestpasswordever'
-p phone
-
-p phone.production_number
-# phone.production_number = 'sdf'
-
+g3 = Gadget.new('sportsfan100', 'topsecret')
+g3.password = 'besttopsecret'
+p g3.production_number
 
 
