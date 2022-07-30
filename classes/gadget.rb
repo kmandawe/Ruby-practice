@@ -1,3 +1,5 @@
+require_relative 'app_store'
+
 class Gadget
 
   attr_accessor :username
@@ -15,6 +17,16 @@ class Gadget
     "Gadget #{production_number} has a username #{username}.
     It is made from the #{self.class} class and it
     has the ID #{object_id}"
+  end
+
+  def install_app(name)
+    app = AppStore.find_app(name)
+    @apps << app unless @apps.include?(app)
+  end
+
+  def delete_app(name)
+    app = apps.find { |installed_app| installed_app.name == name }
+    apps.delete(app) unless app.nil?
   end
 
   def reset(username, password)
@@ -45,21 +57,14 @@ class Gadget
   end
 end
 
-phone = Gadget.new("rubyfan102", "programming123")
-puts phone.password
+g = Gadget.new("boris", "password")
+p g.apps
 
-phone.password = 123
-puts phone.password
+g.install_app(:Chat)
+g.install_app(:Twitter)
+g.install_app(:Chat)
+p g.apps
 
-phone.password = 'test'
-puts phone.password
-
-phone.password = 'computer'
-puts phone.password
-
-phone.password = 'computer123'
-puts phone.password
-
-
-
-
+g.delete_app(:Chat)
+g.delete_app(:News)
+p g.apps
