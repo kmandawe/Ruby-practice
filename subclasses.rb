@@ -32,3 +32,27 @@ p dan.class
 
 p bob.introduce
 p dan.introduce
+
+p Manager.ancestors
+
+puts Manager.superclass
+puts Worker.superclass
+
+puts Manager.superclass == Worker.superclass
+
+puts Manager < Employee
+puts Worker < Employee
+puts Employee < Worker
+
+p Worker.ancestors
+p Worker < Employee
+p Worker < Object
+p Worker < Kernel
+p Worker < BasicObject
+
+p Manager.ancestors
+p Manager < Object
+p Manager < Kernel
+p Manager < BasicObject
+
+p Object < Manager
