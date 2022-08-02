@@ -14,11 +14,19 @@ class Employee
 end
 
 class Manager < Employee
-
+  def yell
+    "Who's the boss? I'm the boss!"
+  end
 end
 
 class Worker < Employee
+  def clock_in(time)
+    "Starting my shift at #{time}"
+  end
 
+  def yell
+    "I'm working! I'm working!"
+  end
 end
 
 boris = Employee.new('Boris', 25)
@@ -79,3 +87,13 @@ puts
 
 puts dan.instance_of?(Worker)
 puts dan.instance_of?(Employee)
+
+p bob.introduce
+p dan.introduce
+
+p bob.yell
+p dan.clock_in("8:30AM")
+
+p bob.yell
+p dan.yell
+
