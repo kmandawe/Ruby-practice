@@ -17,6 +17,10 @@ class Manager < Employee
   def yell
     "Who's the boss? I'm the boss!"
   end
+
+  def introduce
+    "My name is #{name} and I'm a manager! Woo-hoo!"
+  end
 end
 
 class Worker < Employee
@@ -96,4 +100,7 @@ p dan.clock_in("8:30AM")
 
 p bob.yell
 p dan.yell
+
+sally = Manager.new("Sally", 45)
+p sally.introduce
 
