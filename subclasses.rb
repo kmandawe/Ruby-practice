@@ -56,3 +56,26 @@ p Manager < Kernel
 p Manager < BasicObject
 
 p Object < Manager
+
+puts
+
+puts bob.is_a?(Manager)
+puts bob.is_a?(Employee)
+puts bob.is_a?(Object)
+puts bob.is_a?(Kernel)
+puts bob.is_a?(BasicObject)
+puts dan.is_a?(Worker)
+puts dan.is_a?(Manager)
+
+puts
+
+puts bob.instance_of?(Manager)
+puts bob.instance_of?(Employee)
+puts bob.instance_of?(Object)
+puts bob.instance_of?(Kernel)
+puts bob.instance_of?(BasicObject)
+
+puts
+
+puts dan.instance_of?(Worker)
+puts dan.instance_of?(Employee)
