@@ -14,12 +14,20 @@ class Employee
 end
 
 class Manager < Employee
+  attr_reader :rank
+
+  def initialize(name, age, rank)
+    super(name, age)
+    @rank = rank
+  end
+
   def yell
     "Who's the boss? I'm the boss!"
   end
 
   def introduce
-    "My name is #{name} and I'm a manager! Woo-hoo!"
+    result = super
+    result += " I'm also a manager!"
   end
 end
 
@@ -36,7 +44,7 @@ end
 boris = Employee.new('Boris', 25)
 puts boris.introduce
 
-bob = Manager.new('Bob', 48)
+bob = Manager.new('Bob', 48, "SVP")
 dan = Worker.new('Daniel', 36)
 
 p bob.class
@@ -101,6 +109,18 @@ p dan.clock_in("8:30AM")
 p bob.yell
 p dan.yell
 
-sally = Manager.new("Sally", 45)
+sally = Manager.new("Sally", 45, "SVP")
 p sally.introduce
 
+sally = Manager.new("Sally", 45, "SVP")
+p sally.rank
+p sally.name
+p sally.age
+
+p sally.introduce
+
+rick = Employee.new('Rick', 45)
+p rick.name
+p rick.age
+# p rick.rank
+p rick.introduce
